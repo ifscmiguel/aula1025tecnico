@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (isset($_SESSION['nome'])) {
+    $logado = true;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,11 +15,7 @@
 <body>
 
 <div class="container">
-    <nav>
-        <a href="index.php">Início</a>
-        <a href="segura.php">Página segura</a>
-        <a href="login.php">Login</a>
-    </nav>
+    <?php require 'menu.php'; ?>
     <main>
         <h1>Página inicial pública</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt maiores magnam beatae? Tenetur, officiis doloremque. Exercitationem iure accusantium doloremque, beatae blanditiis saepe sit in earum id eum omnis culpa dolorum?</p>

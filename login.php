@@ -1,36 +1,55 @@
+<?php
+#login.php
+# se já está logado, redireciona
+session_start();
+if (isset($_SESSION['nome'])) {
+    header('Location:segura.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<div class="container">
-<nav>
-        <a href="index.php">Início</a>
-        <a href="segura.php">Página segura</a>
-        <a href="login.php">Login</a>
-    </nav>
-    <main>
-        <h1>Login</h1>
-        <form action="" method="post">
-            <div>
-                <label for="user">User</label>
-                <input type="text" name="user" id="user">
-            </div>
-            <div>
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha">
-            </div>
-            <div>
-                <input type="submit" value="Verificar">
-            </div>
-        </form>
-    </main>
-</div>
-    
+<body>
+    <div class="container">
+        <?php require 'menu.php'; ?>
+        <main>
+            <?php
+            $msg = filter_input(INPUT_GET, 'msg');
+            if($msg){
+                echo '<div class="erro">'.urldecode($msg).'</div>';
+            }              
+            ?>            
+            <h1>Login</h1>
+            <form action="verificar.php" method="post">
+                <div>
+                    <label for="user">User</label>
+                    <input type="text" name="user" id="user">
+                </div>
+                <div>
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha">
+                </div>
+                <div>
+                    <input type="submit" value="Verificar">
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        let erro = document.querySelector(".erro");
+        setTimeout(()=>{
+            erro.style.display = 'none';
+        }, 5000);
+    </script>
 </body>
+
 </html>
