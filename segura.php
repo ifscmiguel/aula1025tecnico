@@ -1,10 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['nome'])) {
-    header('Location:login.php?msg=' . urlencode("Você não tem permissão para acessar esta página!"));
-    exit;
-}
-$logado = true;
+$protegido = true;
+require 'proteger.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

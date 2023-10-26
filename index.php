@@ -1,8 +1,6 @@
 <?php
-session_start();
-if (isset($_SESSION['nome'])) {
-    $logado = true;
-}
+$protegido = false;
+require 'proteger.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
