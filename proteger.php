@@ -1,4 +1,5 @@
 <?php
+require 'conexao.php';
 session_start();
 # se pediu para proteger e não está logado
 if( isset($protegido) && $protegido && !isset($_SESSION['nome'])){

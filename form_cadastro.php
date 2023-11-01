@@ -1,11 +1,6 @@
 <?php
-#login.php
-# se já está logado, redireciona
-session_start();
-if (isset($_SESSION['nome'])) {
-    header('Location:segura.php');
-    exit;
-}
+$protegido = false; # página não protegida
+require 'proteger.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,7 +8,7 @@ if (isset($_SESSION['nome'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Cadastro de usuário</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,18 +22,26 @@ if (isset($_SESSION['nome'])) {
                 echo '<div class="erro">'.urldecode($msg).'</div>';
             }              
             ?>            
-            <h1>Login</h1>
-            <form action="verificar.php" method="post">
+            <h1>Cadastro de usuário</h1>
+            <form action="cadastro.php" method="post">
                 <div>
-                    <label for="user">User</label>
-                    <input type="text" name="user" id="user">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" required>
                 </div>
                 <div>
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" required>
                 </div>
                 <div>
-                    <input type="submit" value="Verificar">
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha" required>
+                </div>
+                <div>
+                    <label for="senha2">Confirme a Senha:</label>
+                    <input type="password" name="senha2" id="senha2" required>
+                </div>
+                <div>
+                    <input type="submit" value="Salvar">
                 </div>
             </form>
             <p><a href="form_cadastro.php">Não tem uma conta? Cadastre-se aqui.</a></p>
