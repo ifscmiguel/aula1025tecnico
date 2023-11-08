@@ -31,7 +31,7 @@ if (isset($_SESSION['nome'])) {
             <form action="verificar.php" method="post">
                 <div>
                     <label for="user">User</label>
-                    <input type="text" name="user" id="user">
+                    <input type="text" name="user" id="user" placeholder="Digite seu email">
                 </div>
                 <div>
                     <label for="senha">Senha</label>

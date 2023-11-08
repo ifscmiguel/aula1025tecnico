@@ -90,7 +90,7 @@ input[type=submit]:hover, input[type=reset]:hover, button:hover{
     background-color:rgb(30, 95, 95);
 }
 
-.erro, {
+.erro{
     border: 2px solid red;
     color:red;
     padding:20px;
@@ -103,7 +103,7 @@ input[type=submit]:hover, input[type=reset]:hover, button:hover{
     border: 2px solid orange;
     color:orange;
     padding:20px;
-    font-size:30px;
+    font-size:15px;
     text-align: center;
-    background-color: rgb(250, 189, 189);
+    background-color:rgb(248, 239, 221);
 }
