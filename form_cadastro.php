@@ -44,7 +44,6 @@ require 'proteger.php';
                     <input type="submit" value="Salvar">
                 </div>
             </form>
-            <p><a href="form_cadastro.php">Não tem uma conta? Cadastre-se aqui.</a></p>
         </main>
     </div>
 
