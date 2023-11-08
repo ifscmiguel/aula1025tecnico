@@ -47,7 +47,7 @@ form div{
     border-bottom: 1px dotted #FFF;
 }
 
-input[type=text], input[type=password], input[type=number],input[type=date], textarea{
+input[type=text], input[type=email], input[type=password], input[type=number],input[type=date], textarea{
     padding:10px;
     width:100%;
     margin-bottom: 20px;;
@@ -90,11 +90,11 @@ input[type=submit]:hover, input[type=reset]:hover, button:hover{
     background-color:rgb(30, 95, 95);
 }
 
-.erro{
+.erro, {
     border: 2px solid red;
     color:red;
     padding:20px;
-    font-size:30px;
+    font-size:15px;
     text-align: center;
     background-color: rgb(250, 189, 189);
 }

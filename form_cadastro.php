@@ -20,7 +20,7 @@ require 'proteger.php';
             $msg = filter_input(INPUT_GET, 'msg');
             if($msg){
                 echo '<div class="erro">'.urldecode($msg).'</div>';
-            }              
+            }   
             ?>            
             <h1>Cadastro de usuário</h1>
             <form action="cadastro.php" method="post">
